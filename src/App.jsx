@@ -1,32 +1,22 @@
-import { useState } from 'react'
+import Header from './Header';
+import Person from './Person';
+import Footer from './Footer';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+   <div>
+    <Header />
+    <main>
+      <Person name="Alice" title="CEO" salary={6000} phone="0502350934" email="ceo@best.com" animal="Whale" />
+      <Person name="Jason" title="CFO" salary={5500} phone="0403849832" email="cfo@best.com" animal="Tiger" />
+      <Person name="Mary" title="Secretary" salary={3000} phone="0459393939" email="sec@best.com" animal="Pig" />
+      <Person name="Mei" title="Advisor" salary={4800} phone="0403934843" email="advice@best.com" animal="Cat" />
+      <Person name="Jay" title="Senior Developer" salary={5400} phone="0449933333" email="juha@best.com" animal="Dog" />
+    </main>
+    <Footer />
+   </div>
   )
 }
 
