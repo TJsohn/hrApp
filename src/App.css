@@ -36,7 +36,8 @@ main {
 .box {
   background-color: rgb(244, 190, 184);
   color: darkblue;
-  border-radius: 10px;
+  border-top-left-radius: 60px;
+  border-bottom-right-radius: 60px;
   width: 250px;
   margin: 1rem;
   text-align: left;
