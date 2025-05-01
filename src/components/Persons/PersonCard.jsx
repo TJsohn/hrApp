@@ -19,19 +19,25 @@ const PersonCard = (props) => {
 
     const getAnimalEmoji = (animal) => {
         const map = {
-            Parrot: "🦜",
-            Cat: "🐈",
-            Owl: "🦉",
-            Dog: "🐕",
-            Pig: "🐖",
-            Chicken: "🐔",
-            Leopard: "🐆",
-            Eagle: "🦅",
-            Bear: "🐻",
-            Panda: "🐼",
+            parrot: "🦜",
+            cat: "🐈",
+            owl: "🦉",
+            dog: "🐕",
+            pig: "🐖",
+            chicken: "🐔",
+            leopard: "🐆",
+            eagle: "🦅",
+            bear: "🐻",
+            panda: "🐼",
+            parrot: "🦜",
+            owl: "🦉",
+            chicken: "🐔",
+            leopard: "🐆",
+            eagle: "🦅",
+            penguin: "🐧"
         };
 
-        return map[animal] || "?";
+        return map[animal?.toLowerCase()] || animal;
     };
 
     return (

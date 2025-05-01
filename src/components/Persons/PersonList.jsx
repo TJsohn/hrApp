@@ -1,11 +1,13 @@
-import {persons} from './personsData';
 import PersonCard from './PersonCard';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
-const PersonList = () => {
+const PersonList = ({personsData}) => {
+    console.log("personsData:", personsData);
     return (
         <>
         <div className="boxes">
-            {persons.map(person => 
+            {personsData.map(person => 
                 <PersonCard key={person.id} {...person}/>
                 )}
             </div>
