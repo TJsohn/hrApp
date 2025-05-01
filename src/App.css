@@ -1,5 +1,5 @@
 #root {
-  width: 100vx;
+  width: 100vw;
 }
 
 main {
@@ -8,11 +8,4 @@ main {
 
 main h1 {
   padding: 2rem;
-}
-
-.boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
 }
