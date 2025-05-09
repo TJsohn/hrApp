@@ -1,9 +1,16 @@
+import axios from "axios";
+import {useEffect, useState} from "react";
 import PersonCard from './PersonCard';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 
-const PersonList = ({personsData}) => {
-    console.log("personsData:", personsData);
+const PersonList = () => {
+    const [personsData, setPersonsData] = useState([]);
+
+    useEffect(() => {
+        axios.get("http://localhost:3001/employees").then((res) => {
+            setPersonsData(res.data);
+        });
+    }, []);
+    
     return (
         <>
         <div className="boxes">

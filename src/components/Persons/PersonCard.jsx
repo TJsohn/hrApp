@@ -29,7 +29,6 @@ const PersonCard = (props) => {
             eagle: "🦅",
             bear: "🐻",
             panda: "🐼",
-            parrot: "🦜",
             owl: "🦉",
             chicken: "🐔",
             leopard: "🐆",
