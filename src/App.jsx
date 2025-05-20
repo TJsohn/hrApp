@@ -1,10 +1,10 @@
 import axios from 'axios';
 import {useEffect, useState} from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router";
 import './App.css';
-import PersonList from './components/Persons/PersonList';
-import About from './pages/About';
-import AddEmployee from './pages/AddEmployee';
+import PersonList from './pages/Persons/PersonList';
+import About from './pages/About/About';
+import AddEmployee from './pages/AddEmployee/AddEmployee';
 import Root from './pages/Root';
 
 const App = () => {
@@ -20,28 +20,85 @@ const App = () => {
     setPersonsData((prev) => [...prev, {...newPerson, id: Date.now()},]);
   };
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Root />,
-      children: [
-        {
-          index: true,
-          element: <PersonList personsData={personsData} setPersonsData={setPersonsData} />,
-        },
-        {
-          path: "about",
-          element: <About />,
-        },
-        {
-          path: "add",
-          element: <AddEmployee onAddEmployee={addEmployeeHandler} />,
-        },
-      ],
-    },
-  ]);
+  const handleSalaryChange = (id, newSalary) => {
+    axios
+    .patch(`http://localhost:3001/employees/${id}`, {salary: newSalary})
+    .then((res) => {
+      setPersonsData((prev) =>
+      prev.map((person) => (person.id === id ? res.data : person))
+    );
+  })
+  .catch((err) => {
+    console.error("Failed to update salary:", err);
+  });
+};
 
-  return <RouterProvider router={router} />;
+const handleLocationChange = (id, newLocation) => {
+  axios
+  .patch(`http://localhost:3001/employees/${id}`, {location: newLocation})
+  .then((res) => {
+    setPersonsData((prev) =>
+    prev.map((person) => (person.id === id ? res.data : person))
+  );
+  })
+  .catch((err) => {
+    console.error("Failed to update location:", err);
+  });
+};
+
+const handleDepartmentChange = (id, newDepartment) => {
+  axios
+  .patch(`http://localhost:3001/employees/${id}`, {department:newDepartment})
+  .then((res) => {
+    setPersonsData((prev) => 
+    prev.map((person) => (person.id === id ? res.data : person))
+  );
+  })
+  .catch((err) => {
+    console.error("Failed to update department:", err);
+  });
+};
+
+const handleSkillsChange = (id, newSkills) => {
+  axios
+  .patch(`http://localhost:3001/employees/${id}`, {skills:newSkills})
+  .then((res) => {
+    setPersonsData((prev) =>
+    prev.map((person) => (person.id === id ? res.data : person))
+  );
+  })
+  .catch((err) => {
+    console.error("Failed to update skills:", err);
+  });
+};
+
+const handleUpdate = (id, updatedData) => {
+  setPersonsData((prev) => 
+  prev.map((person) => (person.id === id ? { ...person, ...updatedData} : person))
+);
+};
+
+  return (
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Root />}>
+      <Route index
+      element={
+        <PersonList
+        personsData={personsData}
+        onSalaryChange={handleSalaryChange}
+        onLocationChange={handleLocationChange}
+        onDepartmentChange={handleDepartmentChange}
+        onSkillsChange={handleSkillsChange}
+        onUpdate={handleUpdate}
+        />
+      }
+      />
+      <Route path="/about" element={<About />} />
+      <Route path="/add" element={<AddEmployee onAddEmployee={addEmployeeHandler} />}
+      />
+      </Route></Routes></BrowserRouter>
+  );
 };
 
 export default App;

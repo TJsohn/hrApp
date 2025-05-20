@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import "./AddEmployee.css";
 
 const AddEmployee = ({onAddEmployee}) => {
@@ -27,7 +27,7 @@ const AddEmployee = ({onAddEmployee}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const newEmployee = {...formData, id: Date.now(),skills: formData.skills.split(",") };
+        const newEmployee = {...formData, id: Date.now(), salary: parseFloat(formData.salary), skills: formData.skills.split(",").map(s => s.trim()).filter(Boolean) };
         axios.post("http://localhost:3001/employees", newEmployee).then((res) => {
             console.log(res);
         });
@@ -35,7 +35,7 @@ const AddEmployee = ({onAddEmployee}) => {
         onAddEmployee(newEmployee);
         navigate("/");
 
-        setFormData({ name: "", title: "", salary: "", phone: "", email: "", animal: "", startDate: "", location: "", department: "", skills: ""});
+        setFormData({ name: "", title: "", salary: "", phone: "", email: "", animal: "", startDate: "2010-02-01", location: "", department: "", skills: ""});
     };
 
     return (
