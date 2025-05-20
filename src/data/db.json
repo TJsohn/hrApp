@@ -4,33 +4,34 @@
       "id": "1",
       "name": "TJ Sohn",
       "title": "CEO",
-      "salary": 5001,
+      "salary": 5000,
       "phone": "040-8205822",
       "email": "tj.sohn@example.com",
       "animal": "Parrot",
       "startDate": "2010-02-01",
-      "location": "Espoo",
-      "department": "Admin",
+      "location": "Helsinki",
+      "department": "Executives",
       "skills": [
         "Business development",
         "Communication",
-        "Web"
+        "Finance Management"
       ]
     },
     {
       "id": "2",
       "name": "Jay Wilco",
       "title": "Senior Developer",
-      "salary": 5498,
+      "salary": 4500,
       "phone": "045-3833333",
       "email": "jay.wilco@example.com",
       "animal": "Cat",
       "startDate": "2010-06-30",
-      "location": "Dubai",
-      "department": "IT strategy",
+      "location": "Helsinki",
+      "department": "IT",
       "skills": [
-        "Prototypin",
-        "web searching"
+        "Frontend Development",
+        "Backend Development",
+        "Prototyping"
       ]
     },
     {
@@ -210,7 +211,7 @@
       ]
     },
     {
-      "id": "1747164612885",
+      "id": 1747164612885,
       "name": "Taejeong Sohn",
       "title": "dd",
       "salary": "123",
@@ -222,22 +223,6 @@
       "department": "dd",
       "skills": [
         "dd"
-      ]
-    },
-    {
-      "id": 1747739502061,
-      "name": "Jamil",
-      "title": "Senior Developer",
-      "salary": 5000,
-      "phone": "04038383838",
-      "email": "jamil@example.com",
-      "animal": "penguin",
-      "startDate": "2010-07-23",
-      "location": "Vantaa, Finland",
-      "department": "IT",
-      "skills": [
-        "Web development",
-        "Prototyping"
       ]
     }
   ]
