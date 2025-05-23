@@ -6,7 +6,7 @@ const Root = () => {
 
     return (
         <>
-        <Header name="HR App" />
+        <Header name="React HR App" />
         <main>
             <Outlet />
         </main>

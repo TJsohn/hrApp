@@ -1,8 +1,8 @@
-import './Footer.css';
+import styles from './Footer.module.css';
 
 const Footer = ({year}) => {
     return (
-        <footer>
+        <footer className={styles.footer}>
             <p>Copyright &copy; REACT25K TJ Sohn {year}</p>
         </footer>
     )

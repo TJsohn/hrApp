@@ -4,7 +4,7 @@
       "id": "1",
       "name": "TJ Sohn",
       "title": "CEO",
-      "salary": 5000,
+      "salary": 4985,
       "phone": "040-8205822",
       "email": "tj.sohn@example.com",
       "animal": "Parrot",
@@ -86,16 +86,16 @@
       "id": "6",
       "name": "Hoa Lu",
       "title": "Researcher",
-      "salary": 4200,
+      "salary": 4194,
       "phone": "040-3343939",
       "email": "hoa.lu@example.com",
       "animal": "Chicken",
       "startDate": "2014-02-10",
-      "location": "Helsinki",
-      "department": "Research",
+      "location": "Vantaa",
+      "department": "R&D",
       "skills": [
         "Business Research",
-        "Business Analyzation"
+        "Analysis"
       ]
     },
     {
@@ -148,7 +148,7 @@
       "id": "10",
       "name": "Bin Won",
       "title": "CTO",
-      "salary": 3900,
+      "salary": 3904,
       "phone": "045-3334221",
       "email": "bin.won@example.com",
       "animal": "Panda",
@@ -160,69 +160,49 @@
       ]
     },
     {
-      "id": "1746803919450",
-      "name": "dd",
-      "title": "dd",
-      "salary": "123",
-      "phone": "12313",
-      "email": "sohntaejeong@gmail.com",
-      "animal": "Penguin",
-      "startDate": "2010-02-27",
-      "location": "Vantaa, Finland",
-      "department": "dd",
+      "id": "7d39",
+      "name": "CK",
+      "title": "Manager",
+      "salary": 4005,
+      "phone": "00404222",
+      "email": "ck@example.com",
+      "animal": "Eagle",
+      "startDate": "2025-04-30",
+      "location": "Vancouver",
+      "department": "Catering",
       "skills": [
-        "dd",
-        " dd",
-        " dd"
+        "Site management",
+        "F&B"
       ]
     },
     {
-      "id": "1746804675165",
-      "name": "dd",
-      "title": "dd",
-      "salary": "123",
-      "phone": "1231",
-      "email": "sohntaejeong@gmail.com",
-      "animal": "panda",
-      "startDate": "2010-02-20",
-      "location": "Vantaa, Finland",
-      "department": "dd",
+      "id": "3a51",
+      "name": "Hyun Kim",
+      "title": "Communication Advisor",
+      "salary": 4992,
+      "phone": "03030303030",
+      "email": "hyun@example.com",
+      "animal": "Dolphin",
+      "startDate": "2020-06-17",
+      "location": "Busan",
+      "department": "Communication",
       "skills": [
-        "dd",
-        " dd",
-        " dd"
+        "Communication strategy"
       ]
     },
     {
-      "id": "1747057956917",
-      "name": "dd",
-      "title": "dd",
-      "salary": "222",
-      "phone": "222",
-      "email": "dd@gmail.com",
-      "animal": "Penguin",
-      "startDate": "2010-03-13",
-      "location": "Vantaa, Finland",
-      "department": "dd",
+      "id": "aa79",
+      "name": "Nasu",
+      "title": "Receptionist",
+      "salary": 3000,
+      "phone": "0040404",
+      "email": "nasu@example.com",
+      "animal": "rabbit",
+      "startDate": "2018-02-17",
+      "location": "Amsterdam",
+      "department": "Reception",
       "skills": [
-        "dd",
-        " dd",
-        " dd"
-      ]
-    },
-    {
-      "id": 1747164612885,
-      "name": "Taejeong Sohn",
-      "title": "dd",
-      "salary": "123",
-      "phone": "0408205822",
-      "email": "sohntaejeong@gmail.com",
-      "animal": "panda",
-      "startDate": "2010-03-13",
-      "location": "Vantaa, Finland",
-      "department": "dd",
-      "skills": [
-        "dd"
+        "Schedule management"
       ]
     }
   ]
