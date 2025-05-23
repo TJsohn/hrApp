@@ -1,6 +1,6 @@
-import axios from 'axios';
+import useAxios from './hooks/useAxios';
 import {useEffect, useState} from "react";
-import { BrowserRouter, Routes, Route} from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
 import './App.css';
 import PersonList from './pages/Persons/PersonList';
 import About from './pages/About/About';
@@ -8,21 +8,27 @@ import AddEmployee from './pages/AddEmployee/AddEmployee';
 import Root from './pages/Root';
 
 const App = () => {
+  const {get, post, patch} = useAxios();
   const [personsData, setPersonsData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/employees").then((res) => {
-      setPersonsData(res.data);
-    });
+    get("http://localhost:3001/employees")
+    .then((res) => setPersonsData(res.data))
+    .catch((err) => console.error("Failed to fetch data:", err));
   }, []);
 
   const addEmployeeHandler = (newPerson) => {
-    setPersonsData((prev) => [...prev, {...newPerson, id: Date.now()},]);
+    post("http://localhost:3001/employees", newPerson)
+    .then((res) => {
+      setPersonsData((prev) => [...prev, res.data]);
+    })
+    .catch((err) => {
+      console.error("Failed to add employee:", err);
+    });
   };
 
   const handleSalaryChange = (id, newSalary) => {
-    axios
-    .patch(`http://localhost:3001/employees/${id}`, {salary: newSalary})
+    patch(`http://localhost:3001/employees/${id}`, {salary: newSalary})
     .then((res) => {
       setPersonsData((prev) =>
       prev.map((person) => (person.id === id ? res.data : person))
@@ -34,8 +40,7 @@ const App = () => {
 };
 
 const handleLocationChange = (id, newLocation) => {
-  axios
-  .patch(`http://localhost:3001/employees/${id}`, {location: newLocation})
+  patch(`http://localhost:3001/employees/${id}`, {location: newLocation})
   .then((res) => {
     setPersonsData((prev) =>
     prev.map((person) => (person.id === id ? res.data : person))
@@ -47,8 +52,7 @@ const handleLocationChange = (id, newLocation) => {
 };
 
 const handleDepartmentChange = (id, newDepartment) => {
-  axios
-  .patch(`http://localhost:3001/employees/${id}`, {department:newDepartment})
+  patch(`http://localhost:3001/employees/${id}`, {department:newDepartment})
   .then((res) => {
     setPersonsData((prev) => 
     prev.map((person) => (person.id === id ? res.data : person))
@@ -60,8 +64,7 @@ const handleDepartmentChange = (id, newDepartment) => {
 };
 
 const handleSkillsChange = (id, newSkills) => {
-  axios
-  .patch(`http://localhost:3001/employees/${id}`, {skills:newSkills})
+  patch(`http://localhost:3001/employees/${id}`, {skills:newSkills})
   .then((res) => {
     setPersonsData((prev) =>
     prev.map((person) => (person.id === id ? res.data : person))

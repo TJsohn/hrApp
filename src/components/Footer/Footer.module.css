@@ -1,0 +1,8 @@
+.footer {
+  background-color: darkorange;
+  height: 50px;
+  padding: 1rem 2rem;
+  width: 100vw;
+  color: #333;
+  box-sizing: border-box;
+}
