@@ -16,8 +16,14 @@ const PersonCard = ({
     skills,
     onUpdate,
 }) => {
-    console.log("Received skills:", skills, typeof skills, Array.isArray(skills));
-    return <div>Check console for skills type</div>;
+   console.log("Skills prop inside PersonCard:", skills, typeof skills, Array.isArray(skills));
+   return (
+  <div>
+    <p>🛠️ {Array.isArray(skills) ? skills.join(", ") : `Invalid skills: ${JSON.stringify(skills)}`}</p>
+    <p>Check console for skills type</p>
+  </div>
+);
+
     // const {patch} = useAxios();
     // const [isEditing, setIsEditing] = useState(false);
     // const [newSalary, setNewSalary] = useState(salary);
