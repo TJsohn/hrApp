@@ -25,13 +25,15 @@ const AddEmployee = ({onAddEmployee}) => {
         setFormData((prev) => ({...prev, [name]: value}));
     }
 
+    const API_URL = import.meta.env.VITE_API_URL;
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const newEmployee = {...formData, salary: parseFloat(formData.salary), skills: formData.skills.split(",").map(s => s.trim()).filter(Boolean) };
 
         try {
-            const res = await post("http://localhost:3001/employees", newEmployee);
+            const res = await post(`${API_URL}/employees`, newEmployee);
             onAddEmployee(res.data);
             navigate("/");
         } catch (err) {
