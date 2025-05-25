@@ -11,7 +11,8 @@ const App = () => {
   const {get, post, patch} = useAxios();
   const [personsData, setPersonsData] = useState([]);
 
- console.log("API URL:", import.meta.env.VITE_API_URL);
+console.log("TEST:", import.meta.env.VITE_TEST);
+
 
 
 
