@@ -7,14 +7,13 @@ import About from './pages/About/About';
 import AddEmployee from './pages/AddEmployee/AddEmployee';
 import Root from './pages/Root';
 
-const App = () => {
-  const {get, post, patch} = useAxios();
-  const [personsData, setPersonsData] = useState([]);
-
+console.log("API URL:", import.meta.env.VITE_API_URL);
 console.log("TEST:", import.meta.env.VITE_TEST);
 
 
-
+const App = () => {
+  const {get, post, patch} = useAxios();
+  const [personsData, setPersonsData] = useState([]);
 
   useEffect(() => {
     get("/employees")
