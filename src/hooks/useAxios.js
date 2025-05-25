@@ -1,9 +1,15 @@
 import axios from "axios";
 
+const baseURL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+
+const instance = axios.create({
+  baseURL,
+});
+
 const useAxios = () => {
-  const get = (url) => axios.get(url);
-  const post = (url, data) => axios.post(url, data);
-  const patch = (url, data) => axios.patch(url, data);
+  const get = (url) => instance.get(url);
+  const post = (url, data) => instance.post(url, data);
+  const patch = (url, data) => instance.patch(url, data);
   return { get, post, patch };
 };
 
