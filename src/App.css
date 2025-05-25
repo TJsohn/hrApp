@@ -10,7 +10,7 @@ main h1 {
   padding: 2rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 375px) {
   #root {
     width: 100%;
   }

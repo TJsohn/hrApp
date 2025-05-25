@@ -20,7 +20,7 @@
   list-style-type: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 375px) {
   .aboutContainer {
     padding: 2rem 1rem;
     font-size: 0.95rem;
