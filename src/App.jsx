@@ -11,17 +11,14 @@ const App = () => {
   const {get, post, patch} = useAxios();
   const [personsData, setPersonsData] = useState([]);
 
-  const API_URL = import.meta.env.VITE_API_URL;
-  console.log("VITE_API_URL from env:", API_URL);
-
   useEffect(() => {
-    get(`${API_URL}/employees`)
+    get("/employees")
     .then((res) => setPersonsData(res.data))
     .catch((err) => console.error("Failed to fetch data:", err));
   }, []);
 
   const addEmployeeHandler = (newPerson) => {
-    post(`${API_URL}/employees`, newPerson)
+    post("/employees", newPerson)
     .then((res) => {
       setPersonsData((prev) => [...prev, res.data]);
     })
@@ -31,7 +28,7 @@ const App = () => {
   };
 
   const handleSalaryChange = (id, newSalary) => {
-    patch(`${API_URL}/employees/${id}`, {salary: newSalary})
+    patch(`/employees/${id}`, {salary: newSalary})
     .then((res) => {
       setPersonsData((prev) =>
       prev.map((person) => (person.id === id ? res.data : person))
@@ -43,7 +40,7 @@ const App = () => {
 };
 
 const handleLocationChange = (id, newLocation) => {
-  patch(`${API_URL}/employees/${id}`, {location: newLocation})
+  patch(`/employees/${id}`, {location: newLocation})
   .then((res) => {
     setPersonsData((prev) =>
     prev.map((person) => (person.id === id ? res.data : person))
@@ -55,7 +52,7 @@ const handleLocationChange = (id, newLocation) => {
 };
 
 const handleDepartmentChange = (id, newDepartment) => {
-  patch(`${API_URL}/employees/${id}`, {department:newDepartment})
+  patch(`/employees/${id}`, {department:newDepartment})
   .then((res) => {
     setPersonsData((prev) => 
     prev.map((person) => (person.id === id ? res.data : person))
@@ -67,7 +64,7 @@ const handleDepartmentChange = (id, newDepartment) => {
 };
 
 const handleSkillsChange = (id, newSkills) => {
-  patch(`${API_URL}/employees/${id}`, {skills:newSkills})
+  patch(`/employees/${id}`, {skills:newSkills})
   .then((res) => {
     setPersonsData((prev) =>
     prev.map((person) => (person.id === id ? res.data : person))
@@ -101,8 +98,7 @@ const handleUpdate = (id, updatedData) => {
       }
       />
       <Route path="/about" element={<About />} />
-      <Route path="/add" element={<AddEmployee onAddEmployee={addEmployeeHandler} />}
-      />
+      <Route path="/add" element={<AddEmployee onAddEmployee={addEmployeeHandler} />} />
       </Route></Routes></BrowserRouter>
   );
 };
