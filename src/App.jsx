@@ -1,5 +1,3 @@
-console.log("API URL:", import.meta.env.VITE_API_URL);
-console.log("TEST:", import.meta.env.VITE_TEST);
 import useAxios from './hooks/useAxios';
 import {useEffect, useState} from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
@@ -8,8 +6,6 @@ import PersonList from './pages/Persons/PersonList';
 import About from './pages/About/About';
 import AddEmployee from './pages/AddEmployee/AddEmployee';
 import Root from './pages/Root';
-
-
 
 const App = () => {
   const {get, post, patch} = useAxios();
