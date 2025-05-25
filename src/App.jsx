@@ -13,6 +13,7 @@ const App = () => {
 
   const API_URL = import.meta.env.VITE_API_URL;
   console.log("API_URL:", API_URL);
+  console.log("VITE_API_URL from env:", import.meta.env.VITE_API_URL);
 
   useEffect(() => {
     get(`${API_URL}/employees`)
