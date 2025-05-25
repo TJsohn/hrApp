@@ -110,7 +110,7 @@ const PersonCard = ({
        if (Object.keys(updatedFields).length === 0) return;
 
        try {
-        const res = await patch(`http://localhost:3001/employees/${id}`, updatedFields);
+        const res = await patch(`${import.meta.env.VITE_API_URL}/employees/${id}`, updatedFields);
         onUpdate(id, {...res.data, skills: parsedSkills});
         setMessage("Changes saved!");
         setTimeout(() => setMessage(""), 2000);

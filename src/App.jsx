@@ -11,14 +11,16 @@ const App = () => {
   const {get, post, patch} = useAxios();
   const [personsData, setPersonsData] = useState([]);
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
-    get("http://localhost:3001/employees")
+    get(`${API_URL}/employees`)
     .then((res) => setPersonsData(res.data))
     .catch((err) => console.error("Failed to fetch data:", err));
   }, []);
 
   const addEmployeeHandler = (newPerson) => {
-    post("http://localhost:3001/employees", newPerson)
+    post(`${API_URL}/employees`, newPerson)
     .then((res) => {
       setPersonsData((prev) => [...prev, res.data]);
     })
@@ -28,7 +30,7 @@ const App = () => {
   };
 
   const handleSalaryChange = (id, newSalary) => {
-    patch(`http://localhost:3001/employees/${id}`, {salary: newSalary})
+    patch(`${API_URL}/employees/${id}`, {salary: newSalary})
     .then((res) => {
       setPersonsData((prev) =>
       prev.map((person) => (person.id === id ? res.data : person))
@@ -40,7 +42,7 @@ const App = () => {
 };
 
 const handleLocationChange = (id, newLocation) => {
-  patch(`http://localhost:3001/employees/${id}`, {location: newLocation})
+  patch(`${API_URL}/employees/${id}`, {location: newLocation})
   .then((res) => {
     setPersonsData((prev) =>
     prev.map((person) => (person.id === id ? res.data : person))
@@ -52,7 +54,7 @@ const handleLocationChange = (id, newLocation) => {
 };
 
 const handleDepartmentChange = (id, newDepartment) => {
-  patch(`http://localhost:3001/employees/${id}`, {department:newDepartment})
+  patch(`${API_URL}/employees/${id}`, {department:newDepartment})
   .then((res) => {
     setPersonsData((prev) => 
     prev.map((person) => (person.id === id ? res.data : person))
@@ -64,7 +66,7 @@ const handleDepartmentChange = (id, newDepartment) => {
 };
 
 const handleSkillsChange = (id, newSkills) => {
-  patch(`http://localhost:3001/employees/${id}`, {skills:newSkills})
+  patch(`${API_URL}/employees/${id}`, {skills:newSkills})
   .then((res) => {
     setPersonsData((prev) =>
     prev.map((person) => (person.id === id ? res.data : person))
