@@ -12,6 +12,7 @@ const App = () => {
   const [personsData, setPersonsData] = useState([]);
 
   console.log("VITE_API_URL from env:", import.meta.env.VITE_API_URL);
+  console.log("TEST:", import.meta.env.VITE_TEST_MESSAGE);
 
 
   useEffect(() => {
