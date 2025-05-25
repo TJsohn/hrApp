@@ -5,6 +5,11 @@ const PersonList = ({
     personsData,
     onUpdate
 }) => {
+     console.log("Received personsData:", personsData, typeof personsData, Array.isArray(personsData));
+
+    if (!Array.isArray(personsData)) {
+        return <p style={{ color: "red" }}>❌ Error: personsData is not an array</p>;
+    }
     
     return (
         <>
