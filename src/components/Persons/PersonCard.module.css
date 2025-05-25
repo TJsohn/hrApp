@@ -83,3 +83,32 @@ input {
   font-weight: bold;
   margin-top: 5px;
 }
+
+@media (max-width: 480px) {
+  .personCard {
+    width: 90%;
+    margin: 1rem auto;
+    border-radius: 20px;
+  }
+
+  .favAnimal {
+    font-size: 20px;
+    top: 0.25rem;
+    right: 0.5rem;
+  }
+
+  .reminders {
+    font-size: 0.9rem;
+  }
+
+  .secondary {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  input {
+    font-size: 0.9rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+}
