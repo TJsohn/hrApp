@@ -39,3 +39,26 @@
   border-bottom: 1px dashed navy;
   font-weight: 600;
 }
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+  }
+
+  .logoText {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .navListItem {
+    display: block;
+    padding: 0.25rem 0;
+  }
+
+  .link {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+  }
+}

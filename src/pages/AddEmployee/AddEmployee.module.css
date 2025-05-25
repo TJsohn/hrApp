@@ -15,3 +15,16 @@
   width: 350px;
   margin: 0;
 }
+
+@media (max-width: 480px) {
+  .form {
+    width: 90%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .input,
+  .submitButton {
+    width: 100%;
+  }
+}
