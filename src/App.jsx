@@ -1,3 +1,5 @@
+console.log("API URL:", import.meta.env.VITE_API_URL);
+console.log("TEST:", import.meta.env.VITE_TEST);
 import useAxios from './hooks/useAxios';
 import {useEffect, useState} from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
@@ -7,8 +9,6 @@ import About from './pages/About/About';
 import AddEmployee from './pages/AddEmployee/AddEmployee';
 import Root from './pages/Root';
 
-console.log("API URL:", import.meta.env.VITE_API_URL);
-console.log("TEST:", import.meta.env.VITE_TEST);
 
 
 const App = () => {
