@@ -63,7 +63,6 @@ const PersonCard = ({
             camel: "🐪",
             kangaroo: "🦘",
             bat: "🦇",
-            hedgehog: "🦔",
             turkey: "🦃",
             duck: "🦆",
             swan: "🦢",
