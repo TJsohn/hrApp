@@ -21,8 +21,9 @@ const PersonCard = ({
     const [newSalary, setNewSalary] = useState(salary);
     const [newLocation, setNewLocation] = useState(location);
     const [newDepartment, setNewDepartment] = useState(department);
-    console.log("skills in PersonCard:", skills, typeof skills);
-    const [skillsInput, setSkillsInput] = useState(skills.join(", "));
+    const safeSkills = Array.isArray(skills) ? skills : [];
+    console.log("skills prop:", skills, typeof skills, Array.isArray(skills));
+    const [skillsInput, setSkillsInput] = useState(safeSkills.join(", "));
     const [message, setMessage] = useState("");
 
     const start = new Date(startDate);
