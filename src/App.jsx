@@ -12,7 +12,7 @@ const App = () => {
   const [personsData, setPersonsData] = useState([]);
 
   const API_URL = import.meta.env.VITE_API_URL;
-  console.log("API_URL:", import.meta.env.VITE_API_URL);
+  console.log("VITE_API_URL from env:", API_URL);
 
   useEffect(() => {
     get(`${API_URL}/employees`)
