@@ -21,6 +21,7 @@ const PersonCard = ({
     const [newSalary, setNewSalary] = useState(salary);
     const [newLocation, setNewLocation] = useState(location);
     const [newDepartment, setNewDepartment] = useState(department);
+    console.log("skills in PersonCard:", skills, typeof skills);
     const [skillsInput, setSkillsInput] = useState(skills.join(", "));
     const [message, setMessage] = useState("");
 
