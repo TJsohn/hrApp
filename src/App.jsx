@@ -16,7 +16,10 @@ const App = () => {
 
   useEffect(() => {
     get("/employees")
-    .then((res) => setPersonsData(res.data))
+    .then((res) => {
+      console.log("Data from backend:", res.data);
+      setPersonsData(res.data);
+  })
     .catch((err) => console.error("Failed to fetch data:", err));
   }, []);
 
