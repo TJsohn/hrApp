@@ -8,7 +8,7 @@ import AddEmployee from './pages/AddEmployee/AddEmployee';
 import Root from './pages/Root';
 
 const App = () => {
-  const {get, post, patch} = useAxios();
+  const {get, patch} = useAxios();
   const [personsData, setPersonsData] = useState([]);
 
   useEffect(() => {
@@ -18,14 +18,8 @@ const App = () => {
   }, [get]);
 
   const addEmployeeHandler = (newPerson) => {
-    post("/employees", newPerson)
-    .then((res) => {
-      setPersonsData((prev) => [...prev, res.data]);
-    })
-    .catch((err) => {
-      console.error("Failed to add employee:", err);
-    });
-  };
+      setPersonsData((prev) => [...prev, newPerson]);
+    };
 
   const handleSalaryChange = (id, newSalary) => {
     patch(`/employees/${id}`, {salary: newSalary})
