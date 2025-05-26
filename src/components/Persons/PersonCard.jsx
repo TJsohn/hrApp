@@ -175,7 +175,8 @@ const PersonCard = ({
             <div className={styles.personCardContent}>
                 {isEditing ? (
                     <input ref={salaryInputRef} type="number" value={newSalary} 
-                    onChange={(e) => setNewSalary(e.target.value)} />
+                    onChange={(e) => setNewSalary(e.target.value)} 
+                    onWheel={e => e.target.blur()}/>
                 ) : (
                     <p>💰 {salary}€</p>
                 )}
