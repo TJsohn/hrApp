@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useRef, useEffect} from "react";
 import useAxios from './../../hooks/useAxios';
 import styles from './PersonCard.module.css';
 
@@ -27,6 +27,18 @@ const PersonCard = ({
 
     const start = new Date(startDate);
     const today = new Date();
+
+    const salaryInputRef = useRef();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (document.activeElement === salaryInputRef.current) {
+                salaryInputRef.current.blur();
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     
     const monthsWorked = (today.getFullYear() - start.getFullYear()) * 12 + (today.getMonth() - start.getMonth());
     const yearsWorked = monthsWorked / 12;
@@ -162,7 +174,7 @@ const PersonCard = ({
             </div>
             <div className={styles.personCardContent}>
                 {isEditing ? (
-                    <input type="number" value={newSalary} 
+                    <input ref={salaryInputRef} type="number" value={newSalary} 
                     onChange={(e) => setNewSalary(e.target.value)} />
                 ) : (
                     <p>💰 {salary}€</p>
