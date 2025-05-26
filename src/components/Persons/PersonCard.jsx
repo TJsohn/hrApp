@@ -140,7 +140,7 @@ const PersonCard = ({
         const skillsChanged = currentSkills.length !== inputSkills.length ||
         !currentSkills.every((s, i) => s === inputSkills[i]);
         return (
-        parseFloat(newSalary) === parseFloat(salary) &&
+       Number(newSalary) === Number(salary) &&
         newLocation === location &&
         newDepartment === department &&
         !skillsChanged
