@@ -13,12 +13,9 @@ const App = () => {
 
   useEffect(() => {
     get("/employees")
-    .then((res) => {
-      console.log("Data from backend:", res.data);
-      setPersonsData(res.data);
-  })
+    .then((res) => setPersonsData(res.data))
     .catch((err) => console.error("Failed to fetch data:", err));
-  }, []);
+  }, [get]);
 
   const addEmployeeHandler = (newPerson) => {
     post("/employees", newPerson)
