@@ -91,6 +91,14 @@ input {
     border-radius: 20px;
   }
 
+  .personCardContent input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    margin: 0.25rem 0;
+    padding: 0.5rem;
+  }
+
   .favAnimal {
     font-size: 20px;
     top: 0.25rem;

@@ -18,3 +18,9 @@ An application for managing employee data, built with React and JSON server. Thi
 - React Router
 - JSON Server (local backend for employees)
 - Basic CSS and CSS Modules
+
+## Finished Project
+
+- Fontend github: https://github.com/TJsohn/hrApp
+- Backend github: https://github.com/TJsohn/hrapp-backend
+- Live page: https://benevolent-melba-09a263.netlify.app/
