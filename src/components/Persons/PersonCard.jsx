@@ -118,7 +118,7 @@ const PersonCard = ({
         setMessage("Changes saved!");
         setTimeout(() => setMessage(""), 2000);
         setIsEditing(false);
-       } catch (err) {
+       } catch {
         setMessage("Update failed");
         setTimeout(() => setMessage(""), 2000);
        }
