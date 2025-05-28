@@ -113,7 +113,6 @@ const PersonCard = ({
     };
 
     const handleSave = async () => {
-        console.log("API URL:", import.meta.env.VITE_API_URL);
         
         const updatedFields = {};
        if (parseFloat(newSalary) !== parseFloat(salary)) updatedFields.salary = parseFloat(newSalary);
