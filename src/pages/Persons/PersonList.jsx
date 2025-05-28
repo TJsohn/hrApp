@@ -15,9 +15,6 @@ const PersonList = ({
             <h1>Employee list</h1>
              <div className={styles.personsGrid}>
             {personsData.map(person => {
-                 if (import.meta.env.DEV) {
-                        console.log("Person skills before PersonCard:", person.skills, typeof person.skills, Array.isArray(person.skills));
-                    }
 
                 return <PersonCard key={person.id} 
                 {...person} 
